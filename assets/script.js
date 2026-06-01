@@ -22,13 +22,10 @@ const slides = [
 let currentSlide = 0;
 
 const slidesBanner = document.querySelectorAll(".banner-img");
-// NB perso : querySelectorAll récupère tous les éléments contrairement à getElementByID
 
 const dotsContainer = document.querySelector(".dots");
 
 const bannerText = document.querySelector("#banner-text");
-
-// Les points se mettent sur chaque slide :
 
 slides.forEach((slide, index) => {
   const dot = document.createElement("span");
@@ -53,11 +50,9 @@ function showSlide(index) {
   bannerText.innerHTML = slides[index].tagLine;
 }
 
-// Sélection des flèches
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 
-// Event listener flèche gauche
 arrowLeft.addEventListener("click", () => {
     currentSlide--;
     if (currentSlide < 0) {
@@ -66,7 +61,6 @@ arrowLeft.addEventListener("click", () => {
     showSlide(currentSlide);
 });
 
-// Event listener flèche droite
 arrowRight.addEventListener("click", () => {
 	currentSlide++;
 	if (currentSlide === slides.length) {
